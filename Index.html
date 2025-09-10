@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Wabi-sabi Restaurante</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: white; margin: 0; padding: 0; }
+    header { background-color: #004080; color: white; text-align: center; padding: 20px; }
+    nav { background-color: #ff6600; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .contenedor { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; }
+    .platillo { border: 2px solid #004080; border-radius: 10px; padding: 10px; text-align: center; }
+    .platillo img { width: 250px; height: 200px; object-fit: cover; border-radius: 8px; }
+    .formulario {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      border: 2px solid #004080;
+      text-align: center;
+    }
+    .formulario h2 { color: #004080; }
+    label { display: block; margin: 15px 0 5px; font-weight: bold; color: #004080; }
+    input[type="text"], input[type="email"], input[type="date"], input[type="number"], textarea {
+      width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;
+    }
+    textarea { height: 100px; }
+    button {
+      background-color: #ff6600; color: white; padding: 10px 20px; border: none;
+      border-radius: 5px; font-size: 1.1em; cursor: pointer; display: block; margin: 0 auto;
+    }
+    button:hover { background-color: #cc5200; }
+    footer { background:#004080; color:white; text-align:center; padding:10px; margin-top:20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wabi-sabi</h1>
+    <p>Sabor que inspira</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="bebidas.html">Bebidas</a>
+    <a href="postres.html">Postres</a>
+    <a href="ubicaciones.html">Ubicaciones</a>
+    <a href="info.html">Info</a>
+  </nav>
+
+  <main>
+    <h2 style="text-align:center; margin-top:20px;">Nuestros Platillos</h2>
+    <div class="contenedor">
+      <div class="platillo">
+        <img src="sushi.png" alt="Platillo 1">
+        <p>Tabla de sushi tradicional con pescado fresco.</p>
+      </div>
+      <div class="platillo">
+        <img src="nigiri.png" alt="Platillo 2">
+        <p>Orden de tradicionales nigiris de atún o salmón.</p>
+      </div>
+      <div class="platillo">
+        <img src="temaki.png" alt="Platillo 3">
+        <p>Tradicional envuelto japonés con camarón.</p>
+      </div>
+      <div class="platillo">
+        <img src="ramen.png" alt="Platillo 4">
+        <p>Ramen con caldo de cerdo y tocino.</p>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="formulario">
+      <h2>Haz tu reservación</h2>
+      <form action="https://formspree.io/f/mjkoqaal" method="POST">
+        <label for="name">Nombre para la reservación:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="reservation-date">¿Qué día es tu reservación?</label>
+        <input type="date" id="reservation-date" name="reservation_date" required>
+
+        <label for="people">Número de personas:</label>
+        <input type="number" id="people" name="people" required>
+
+        <label for="allergies">¿Alguna restricción o alergia?</label>
+        <textarea id="allergies" name="allergies"></textarea>
+
+        <label for="celebration">¿Se celebra algo?</label>
+        <textarea id="celebration" name="celebration"></textarea>
+
+        <button type="submit">Enviar Reservación</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wabi-sabi Restaurante</p>
+  </footer>
+</body>
+</html>
